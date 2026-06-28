@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Consultant | Kridaya Global Chain</title>
+    <meta name="description" content="Meet our expert consultant with over 12 years of leadership in Supply Chain Management. Specialized in sourcing strategy, COGS optimization, and vendor development.">
+    <meta name="keywords" content="supply chain consultant, SCM expert, sourcing strategy, industrial consulting, Kridaya Global Chain consultant">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="styles.css">
+
+    <style>
+        .page-header {
+            padding: 160px 0 80px;
+            background-color: var(--primary-navy);
+            color: #FFFFFF;
+            text-align: center;
+        }
+        .page-header h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .consultant-section {
+            padding: 80px 0;
+        }
+
+        .consultant-profile {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        .consultant-photo-card {
+            position: sticky;
+            top: 100px;
+        }
+
+        .consultant-photo {
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            object-fit: cover;
+            object-position: center top;
+            border-radius: 12px;
+            box-shadow: var(--shadow-lg);
+            border: 4px solid var(--accent-gold);
+        }
+
+        .consultant-name-card {
+            text-align: center;
+            margin-top: 1.5rem;
+            padding: 1rem;
+            background: var(--bg-light);
+            border-radius: 8px;
+        }
+
+        .consultant-name-card h3 {
+            color: var(--primary-navy);
+            font-size: 1.2rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .consultant-name-card p {
+            color: var(--accent-gold);
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .consultant-details h2 {
+            font-size: 2rem;
+            color: var(--primary-navy);
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 1rem;
+        }
+
+        .consultant-details h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: var(--accent-gold);
+            border-radius: 2px;
+        }
+
+        .overview-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text-main);
+            margin-bottom: 1.5rem;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, var(--primary-navy) 0%, var(--primary-navy-light) 100%);
+            color: #FFFFFF;
+            padding: 2rem;
+            border-radius: 12px;
+            margin: 2rem 0;
+            border-left: 5px solid var(--accent-gold);
+        }
+
+        .highlight-box h3 {
+            color: var(--accent-gold);
+            font-size: 1.3rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .highlight-box p {
+            color: #E2E8F0;
+            line-height: 1.8;
+        }
+
+        .accomplishments {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .accomplishment-card {
+            background: #FFFFFF;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--border-color);
+            transition: var(--transition-standard);
+        }
+
+        .accomplishment-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--accent-gold);
+        }
+
+        .accomplishment-card i {
+            color: var(--accent-gold);
+            width: 28px;
+            height: 28px;
+            margin-bottom: 0.75rem;
+        }
+
+        .accomplishment-card h4 {
+            color: var(--primary-navy);
+            margin-bottom: 0.5rem;
+            font-size: 1.05rem;
+        }
+
+        .accomplishment-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        .philosophy-section {
+            padding: 80px 0;
+            background: var(--bg-light);
+        }
+
+        .philosophy-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+
+        .philosophy-card {
+            background: #FFFFFF;
+            padding: 2.5rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow-md);
+            border-top: 4px solid var(--accent-gold);
+        }
+
+        .philosophy-card h3 {
+            color: var(--primary-navy);
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .philosophy-card h3 i {
+            color: var(--accent-gold);
+            width: 28px;
+            height: 28px;
+        }
+
+        .philosophy-card p {
+            color: var(--text-main);
+            line-height: 1.8;
+            font-size: 1.05rem;
+        }
+
+        .vision-section {
+            padding: 80px 0;
+            background: linear-gradient(135deg, var(--primary-navy) 0%, var(--primary-navy-light) 100%);
+            color: #FFFFFF;
+            text-align: center;
+        }
+
+        .vision-section h2 {
+            color: #FFFFFF;
+            font-size: 2.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .vision-section .vision-subtitle {
+            color: var(--accent-gold);
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 2rem;
+        }
+
+        .vision-section .vision-text {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.15rem;
+            line-height: 1.8;
+            color: #E2E8F0;
+        }
+
+        .vision-values {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin-top: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .vision-value {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .vision-value-icon {
+            width: 60px;
+            height: 60px;
+            background: rgba(212, 175, 55, 0.15);
+            border: 2px solid var(--accent-gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .vision-value-icon i {
+            color: var(--accent-gold);
+            width: 28px;
+            height: 28px;
+        }
+
+        .vision-value span {
+            font-weight: 600;
+            font-size: 0.95rem;
+            color: #FFFFFF;
+        }
+
+        @media (max-width: 992px) {
+            .consultant-profile {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .consultant-photo-card {
+                position: static;
+                max-width: 350px;
+                margin: 0 auto;
+            }
+
+            .philosophy-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .page-header h1 {
+                font-size: 2.25rem;
+            }
+
+            .consultant-details h2 {
+                font-size: 1.5rem;
+            }
+
+            .vision-section h2 {
+                font-size: 1.75rem;
+            }
+
+            .vision-values {
+                gap: 1.5rem;
+            }
+        }
+    </style>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <svg width="48" height="48" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" class="logo-icon">
+                    <circle cx="50" cy="50" r="45" stroke="currentColor" stroke-width="2"/>
+                    <path d="M5 50H95M50 5V95" stroke="currentColor" stroke-width="1" stroke-dasharray="2 2"/>
+                    <ellipse cx="50" cy="50" rx="45" ry="20" stroke="currentColor" stroke-width="1" stroke-dasharray="2 2"/>
+                    <ellipse cx="50" cy="50" rx="20" ry="45" stroke="currentColor" stroke-width="1" stroke-dasharray="2 2"/>
+                    <rect x="42" y="35" width="16" height="30" rx="8" transform="rotate(-45 50 50)" stroke="currentColor" stroke-width="6" fill="var(--bg-main)"/>
+                    <rect x="42" y="35" width="16" height="30" rx="8" transform="rotate(-45 50 50)" stroke="var(--accent-gold)" stroke-width="4"/>
+                    <path d="M85 30A40 40 0 0 1 85 70M15 70A40 40 0 0 1 15 30" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+                    <path d="M80 30L85 25L90 30M10 70L15 75L20 70" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                    <rect x="70" y="45" width="8" height="6" fill="currentColor"/>
+                    <circle cx="25" cy="45" r="3" fill="currentColor"/>
+                    <path d="M47 15H53M50 12V18" stroke="currentColor" stroke-width="2"/>
+                </svg>
+                <div class="logo-brand">
+                    <span class="logo-text">KRIDAYA</span>
+                    <span class="logo-subtext">GLOBAL CHAIN</span>
+                    <span class="logo-slogan">Your Integrated Supply Chain Arm</span>
+                </div>
+            </a>
+            <button class="mobile-menu-btn">
+                <i data-lucide="menu"></i>
+            </button>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="consultant.html">Our Consultant</a></li>
+                <li><a href="audit.html">Audit</a></li>
+                <li><a href="industries.html">Industries</a></li>
+                <li><a href="partner.html">Tech Partner</a></li>
+                <li><a href="contact.html" class="btn btn-primary">Contact Us</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="page-header">
+        <div class="container">
+            <h1>Our Consultant</h1>
+            <p>Leadership driven by experience, integrity, and results.</p>
+        </div>
+    </header>
+
+    <!-- Profile Overview -->
+    <section class="consultant-section">
+        <div class="container">
+            <div class="consultant-profile">
+                <div class="consultant-photo-card">
+                    <img src="Assets/consultant.jpg" alt="Mr. Sudarshan Shanmugam" class="consultant-photo">
+                    <div class="consultant-name-card">
+                        <h3>Mr. Sudarshan Shanmugam</h3>
+                        <p>Supply Chain Expert</p>
+                        <p style="font-size: 0.85rem; color: var(--text-muted); font-weight: normal; margin-top: 2px;">12+ Years SCM Leadership</p>
+                    </div>
+                </div>
+                <div class="consultant-details">
+                    <h2>MY PROFILE OVERVIEW</h2>
+                    <p class="overview-text">With over 12 years of leadership experience in Supply Chain Management (SCM), he has successfully directed and executed complex projects across various industries, consistently achieving operational excellence and delivering strategic value.</p>
+                    <p class="overview-text">His career includes notable accomplishments in setting up German GI cable trays and components, Electronics Manufacturing Services (EMS), and Nutraceutical operations.</p>
+                    <p class="overview-text">He also consulted for a USD 1.5 Billion steel manufacturer, achieving significant cost savings through sourcing strategy optimization and process improvement initiatives.</p>
+
+                    <h2 style="margin-top: 3.5rem;">Professional Philosophy</h2>
+                    <p class="overview-text">Built on integrity, long-term relationships, and value-driven business practices. With decades of experience across various industries, he strongly believes that sustainable success comes from trust, transparency, and continuous improvement.</p>
+                    <p class="overview-text">He is committed to creating a business ecosystem where manufacturers, suppliers, and buyers can collaborate efficiently through technology, strategic sourcing, and professional consulting support.</p>
+
+                    <h2 style="margin-top: 3.5rem;">Vision at Induszy.com</h2>
+                    <p class="overview-text" style="font-style: italic; font-weight: 500; border-left: 4px solid var(--accent-gold); padding-left: 1.5rem; margin-top: 1.5rem;">"India's Reliable Partner in Industrial Sourcing and Consulting, dedicated to empowering businesses to thrive with confidence, enhance efficiency, and achieve lasting success."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Vision Values -->
+    <section class="vision-section">
+        <div class="container">
+            <h2>Core Values</h2>
+            <p class="vision-subtitle">The pillars that drive every engagement</p>
+            <div class="vision-values">
+                <div class="vision-value">
+                    <div class="vision-value-icon"><i data-lucide="shield-check"></i></div>
+                    <span>Integrity</span>
+                </div>
+                <div class="vision-value">
+                    <div class="vision-value-icon"><i data-lucide="handshake"></i></div>
+                    <span>Trust</span>
+                </div>
+                <div class="vision-value">
+                    <div class="vision-value-icon"><i data-lucide="eye"></i></div>
+                    <span>Transparency</span>
+                </div>
+                <div class="vision-value">
+                    <div class="vision-value-icon"><i data-lucide="trending-up"></i></div>
+                    <span>Continuous Improvement</span>
+                </div>
+                <div class="vision-value">
+                    <div class="vision-value-icon"><i data-lucide="users"></i></div>
+                    <span>Collaboration</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer bg-navy text-white">
+        <div class="container footer-grid">
+            <div class="footer-col footer-brand">
+                <a href="index.html" class="logo text-white">
+                    <svg width="48" height="48" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" class="logo-icon">
+                        <circle cx="50" cy="50" r="45" stroke="currentColor" stroke-width="2"/>
+                        <path d="M5 50H95M50 5V95" stroke="currentColor" stroke-width="1" stroke-dasharray="2 2"/>
+                        <ellipse cx="50" cy="50" rx="45" ry="20" stroke="currentColor" stroke-width="1" stroke-dasharray="2 2"/>
+                        <ellipse cx="50" cy="50" rx="20" ry="45" stroke="currentColor" stroke-width="1" stroke-dasharray="2 2"/>
+                        <rect x="42" y="35" width="16" height="30" rx="8" transform="rotate(-45 50 50)" stroke="currentColor" stroke-width="6" fill="#002147"/>
+                        <rect x="42" y="35" width="16" height="30" rx="8" transform="rotate(-45 50 50)" stroke="var(--accent-gold)" stroke-width="4"/>
+                        <path d="M85 30A40 40 0 0 1 85 70M15 70A40 40 0 0 1 15 30" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+                        <path d="M80 30L85 25L90 30M10 70L15 75L20 70" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                        <rect x="70" y="45" width="8" height="6" fill="currentColor"/>
+                        <circle cx="25" cy="45" r="3" fill="currentColor"/>
+                        <path d="M47 15H53M50 12V18" stroke="currentColor" stroke-width="2"/>
+                    </svg>
+                    <div class="logo-brand">
+                        <span class="logo-text text-gold">KRIDAYA</span>
+                        <span class="logo-subtext">GLOBAL CHAIN</span>
+                        <span class="logo-slogan">Your Integrated Supply Chain Arm</span>
+                    </div>
+                </a>
+                <p>Empowering MSMEs with professional supply chain excellence. Your outsourced operations partner.</p>
+            </div>
+
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="consultant.html">Our Consultant</a></li>
+                    <li><a href="audit.html">Audit</a></li>
+                    <li><a href="partner.html">Tech Partner</a></li>
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                    <li><a href="terms.html">Terms of Service</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Services</h4>
+                <ul>
+                    <li><a href="services.html">Material Sourcing</a></li>
+                    <li><a href="services.html">Vendor Development</a></li>
+                    <li><a href="services.html">Logistics Setup</a></li>
+                    <li><a href="services.html">COGS Optimization</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Contact Us</h4>
+                <ul class="footer-contact">
+                    <li>
+                        <i data-lucide="mail"></i>
+                        <a href="mailto:kridayaglobal@gmail.com">kridayaglobal@gmail.com</a>
+                    </li>
+                    <li>
+                        <i data-lucide="phone"></i>
+                        <a href="tel:+917710056859">+91 77100 56859</a>
+                    </li>
+                    <li>
+                        <i data-lucide="map-pin"></i>
+                        <span>Mumbai, India</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; <span id="year"></span> Kridaya Global Chain. All rights reserved.</p>
+                <p style="margin-top: 10px; font-size: 0.8rem;">Crafted by <a href="https://sahyadricode.online/" target="_blank" style="color: var(--accent-gold);">Sahyadri Code Works</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Floating CTA -->
+    <a href="https://wa.me/917710056859?text=Hello%20Team%20Kridaya%20Global%20Chain%2C%20I%20am%20looking%20for%20supply%20chain%20solutions." class="whatsapp-float" target="_blank" rel="noopener noreferrer">
+        <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="white" viewBox="0 0 448 512">
+            <path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/>
+        </svg>
+    </a>
+
+    <script src="script.js"></script>
+    <script>
+        lucide.createIcons();
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
