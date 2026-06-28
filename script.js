@@ -52,4 +52,56 @@ document.addEventListener('DOMContentLoaded', () => {
             navbar.style.padding = '5px 0';
         }
     });
+
+    // Stats Counter Animation
+    const counters = document.querySelectorAll('.stat-number');
+    if (counters.length > 0) {
+        const runCounter = (counter) => {
+            const target = parseFloat(counter.getAttribute('data-target'));
+            const suffix = counter.getAttribute('data-suffix') || '';
+            const duration = 2000; // Animation duration in ms
+            const startTime = performance.now();
+            const startValue = 0;
+            const isFloat = target % 1 !== 0;
+
+            const updateCount = (currentTime) => {
+                const elapsed = currentTime - startTime;
+                const progress = Math.min(elapsed / duration, 1);
+                
+                // Ease out quad
+                const easeProgress = progress * (2 - progress);
+                
+                let currentVal = startValue + (target - startValue) * easeProgress;
+                
+                if (isFloat) {
+                    counter.textContent = currentVal.toFixed(1) + suffix;
+                } else {
+                    counter.textContent = Math.floor(currentVal).toLocaleString() + suffix;
+                }
+
+                if (progress < 1) {
+                    requestAnimationFrame(updateCount);
+                } else {
+                    if (isFloat) {
+                        counter.textContent = target.toFixed(1) + suffix;
+                    } else {
+                        counter.textContent = target.toLocaleString() + suffix;
+                    }
+                }
+            };
+            requestAnimationFrame(updateCount);
+        };
+
+        // Use IntersectionObserver to start when visible
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    runCounter(entry.target);
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.2 });
+
+        counters.forEach(counter => observer.observe(counter));
+    }
 });
